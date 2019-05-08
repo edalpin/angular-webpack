@@ -1,0 +1,15 @@
+@import 'src/styles.scss';
+@import 'src/assets/scss/variables';
+
+body {
+  background-image: $background;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  margin: auto;
+  width: 95%;
+  border-radius: 10px;
+  background-color: $container-background;
+}

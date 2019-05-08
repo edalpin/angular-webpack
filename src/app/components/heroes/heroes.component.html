@@ -1,0 +1,17 @@
+<div class='heroes-wrapper'>
+  <div *ngFor="let hero of heroes; let i=index"
+      class="hero-card"
+      (click)="editHero(hero._nickname)">
+    <div class=image-content>
+      <img src={{hero._picture}}
+           class="image-content--hero-image"
+      >
+      <div class="image-content--hero-number">{{i}}</div>
+    </div>
+    <div class="info-content">
+      <div class=info-content--nickname>{{hero._nickname}}</div>
+      <div class=info-content--text>{{hero._name}}</div>
+      <div class=info-content--text>Estatura: {{hero._height}}</div>
+    </div>
+  </div>
+</div>
