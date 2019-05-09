@@ -8,3 +8,6 @@ import '@angular/router';
 
 // Rxjs
 import 'rxjs';
+
+// NgRx
+import '@ngrx/store';

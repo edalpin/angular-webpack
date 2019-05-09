@@ -1,5 +1,5 @@
 <div class='heroes-wrapper'>
-  <div *ngFor="let hero of heroes; let i=index"
+  <div *ngFor="let hero of heroes$ | async; let i=index"
       class="hero-card"
       (click)="editHero(hero._nickname)">
     <div class=image-content>
@@ -11,7 +11,7 @@
     <div class="info-content">
       <div class=info-content--nickname>{{hero._nickname}}</div>
       <div class=info-content--text>{{hero._name}}</div>
-      <div class=info-content--text>Estatura: {{hero._height}}</div>
+      <div class=info-content--text>Estatura: {{hero._height}}mt</div>
     </div>
   </div>
 </div>
