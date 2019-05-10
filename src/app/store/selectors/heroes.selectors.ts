@@ -10,6 +10,6 @@ export const getHeroInformation = (heroId: string) => createSelector(
         return hero._nickname === heroId;
       });
     }
-    return {};
+    return null;
   }
 )

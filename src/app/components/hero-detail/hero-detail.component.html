@@ -1,2 +1,17 @@
-<h1>Oelo</h1>
-<div>{{hero$ | async | json}}</div>
+<div class="edit-hero-wrapper">
+  <div *ngIf="hero"
+       class="edit-hero-card">
+    <div class="edit-hero-card--hero-image">
+      {{hero._picture}}
+    </div>
+    <div class="edit-hero-card--hero-nickname">
+      {{hero._nickname}}
+    </div>
+    <div class="edit-hero-card--hero-name">
+      {{hero._name}}
+    </div>
+    <div class="edit-hero-card--hero-height">
+      {{hero._height}}
+    </div>
+  </div>
+</div>

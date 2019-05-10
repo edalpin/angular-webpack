@@ -1,0 +1,28 @@
+@import '../../../assets/scss/variables';;
+
+.edit-hero-wrapper{
+  display: flex;
+  justify-content: center;
+
+  .edit-hero-card{
+    border-radius: 10px;
+    background-color: $container-background;
+    padding: 20px;
+
+    &--hero-image{
+
+    }
+
+    &--hero-nickname{
+
+    }
+
+    &--hero-name{
+
+    }
+
+    &--hero-height{
+
+    }
+  }
+}
