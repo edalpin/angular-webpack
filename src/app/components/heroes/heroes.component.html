@@ -1,12 +1,28 @@
 <div class='heroes-wrapper'>
   <div *ngFor="let hero of heroes$ | async; let i=index"
-      class="hero-card"
-      (click)="editHero(hero._nickname)">
+       [ngSwitch]="i+1"
+       class="hero-card"
+       (click)="editHero(hero._nickname)">
     <div class=image-content>
       <img src={{hero._picture}}
            class="image-content--hero-image"
       >
-      <div class="image-content--hero-number">{{i}}</div>
+      <div class="image-content--hero-number"
+           *ngSwitchCase="1">
+        {{i+1}}st
+      </div>
+      <div class="image-content--hero-number"
+           *ngSwitchCase="2">
+        {{i+1}}nd
+      </div>
+      <div class="image-content--hero-number"
+          *ngSwitchCase="3">
+        {{i+1}}rd
+      </div>
+      <div class="image-content--hero-number"
+          *ngSwitchDefault>
+        {{i+1}}th
+      </div>
     </div>
     <div class="info-content">
       <div class=info-content--nickname>{{hero._nickname}}</div>

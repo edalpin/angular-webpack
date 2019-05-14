@@ -21,6 +21,15 @@ export function heroesReducer(state: IHero[] = [], action: Actions) {
     case HeroesActions.HEROES_SET_FAILED_STATE:
       return state = [];
 
+    case HeroesActions.HEROES_UPDATE_HERO_INFO:
+      const newState = state.map(hero => {
+        if (hero._nickname === action.payload._nickname){
+          return action.payload
+        }
+        return hero;
+      });
+      return newState;
+
     default:
       return state;
   }

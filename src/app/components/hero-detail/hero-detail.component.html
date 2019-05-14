@@ -1,17 +1,26 @@
 <div class="edit-hero-wrapper">
   <div *ngIf="hero"
        class="edit-hero-card">
-    <div class="edit-hero-card--hero-image">
-      {{hero._picture}}
-    </div>
-    <div class="edit-hero-card--hero-nickname">
-      {{hero._nickname}}
-    </div>
-    <div class="edit-hero-card--hero-name">
-      {{hero._name}}
-    </div>
-    <div class="edit-hero-card--hero-height">
-      {{hero._height}}
-    </div>
+    <img src={{hero._picture}}
+         class="edit-hero-card--hero-image"
+    >
+    <form [formGroup]="heroForm">
+      <div class="edit-hero-card--form">
+        <div class="nickname"> {{hero._nickname}} </div>
+        <input type="text" formControlName="name">
+        <input type="text" formControlName="height">
+        <div class=actions>
+          <button class="actions--cancel"
+                  (click)="return()">
+            Regresar
+          </button>
+          <button class="actions--update"
+                  [disabled]="heroForm.pristine"
+                  (click)="updateHero()">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

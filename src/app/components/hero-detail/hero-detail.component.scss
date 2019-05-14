@@ -1,4 +1,14 @@
-@import '../../../assets/scss/variables';;
+@import '../../../assets/scss/variables';
+
+%form-elements {
+  border-radius: 5px;
+  height: 30px;
+}
+
+%hover-elements {
+  font-weight: 500;
+  cursor: pointer;
+}
 
 .edit-hero-wrapper{
   display: flex;
@@ -8,21 +18,54 @@
     border-radius: 10px;
     background-color: $container-background;
     padding: 20px;
+    width: 300px;
+    text-align: center;
 
     &--hero-image{
-
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
     }
+    &--form{
+      .nickname{
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: $hero-info-nickname-color;
+      }
 
-    &--hero-nickname{
+      input{
+        width: 90%;
+        border: none;
+        color: $input-text-color;
+        font-size: 13px;
+        margin-top: 15px;
+        @extend %form-elements;
+      }
 
-    }
+      .actions{
+        margin: auto;
+        margin-top: 15px;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
 
-    &--hero-name{
+        &--cancel{
+          @extend %form-elements;
+          width: 100px;
+          &:hover{
+            @extend %hover-elements;
+          }
+        }
 
-    }
-
-    &--hero-height{
-
+        &--update{
+          @extend %form-elements;
+          width: 100px;
+          &:hover{
+            @extend %hover-elements;
+          }
+        }
+      }
     }
   }
 }

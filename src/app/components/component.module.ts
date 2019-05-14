@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Components
 import { HeroesComponent } from './heroes/heroes.component';
@@ -7,7 +8,9 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HeroesComponent,
