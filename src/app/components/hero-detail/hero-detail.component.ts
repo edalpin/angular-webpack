@@ -34,13 +34,18 @@ export class HeroDetailComponent implements OnInit {
       height: this.height
     });
 
-    this.store.select(getHeroInformation(heroId)).subscribe((hero: IHero) => {
-      this.hero = hero;
-      if(hero){
-        this.name.setValue(hero._name);
-        this.height.setValue(hero._height);
+    this.store.select(getHeroInformation(heroId)).subscribe(
+      (hero: IHero) => {
+        if(hero){
+          this.hero = hero;
+          this.name.setValue(hero._name);
+          this.height.setValue(hero._height);
+        }
+      },
+      () => {
+        this.router.navigate(['/not-found']);
       }
-    });
+    );
   }
 
   return(){

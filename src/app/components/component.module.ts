@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Components
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
   ],
   declarations: [
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    NotFoundComponent
   ]
 })
 export class ComponentsModule { }

@@ -6,9 +6,12 @@ export const selectHeroes = (state: IHeroesState) => state.heroes;
 export const getHeroInformation = (heroId: string) => createSelector(
   selectHeroes, (heroes: IHero[]) => {
     if(heroes.length){
-      return heroes.find((hero: IHero) => {
+      const heroFound = heroes.find((hero: IHero) => {
         return hero._nickname === heroId;
       });
+
+      if(!heroFound) { throw 'Not found' };
+      return heroFound
     }
     return null;
   }
